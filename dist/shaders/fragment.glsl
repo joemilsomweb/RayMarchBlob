@@ -36,17 +36,15 @@ void main()
 {
     // Normalized pixel coordinates (from -1 to 1)
     vec2 uv;
-
     //position of camera
     vec3 eye = vec3(0, 0, -10.);
     //up vector for basis
     vec3 up = vec3(0, 1., 0);
     //right vector for basis
     vec3 right = vec3(1., 0, 0);
-    
     //point on image plane
     vec3 p = vec3(uv.x, uv.y, 0);
-    
+
     //center coords around 0
     vec2 xy = gl_FragCoord.xy - iResolution.xy/2.0;
     //calculate depth of z based on the resolution, imagining that the size is 
@@ -59,8 +57,6 @@ void main()
     vec3 pos;
     
     float t = 0.;
-  
-
     bool hit = false; 
 
     const int maxSteps = 64;
@@ -109,7 +105,7 @@ vec4 applyLighting(vec3 pos, vec3 eye){
     // vec3 diffuse = vec3(1., 0, 1.);
 
     //use refraction instead
-    vec3 offset = refract(normalize(pos - eye), normal, .95);
+    vec3 offset = refract(normalize(pos - eye), normal, .98);
     vec3 diffuse = texture2D(texture, uvFrag + offset.xy).rgb;
     vec3 ambient = vec3(0, 1., 1.);
     
