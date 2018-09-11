@@ -52,8 +52,6 @@ function init(vertexShader, fragmentShader){
 	scene.render(0);
 }
 
-
-
 var SHAPE = {
 	SQUARE : {
 		vertices : {
@@ -148,4 +146,4 @@ function Scene(options){
 		}
 	}
 
-loadShaders("shaders/vertex.glsl", "shaders/fragment.glsl", onErr);
+loadShaders("CDN_PATH/shaders/vertex.glsl", "CDN_PATH/shaders/fragment.glsl", onErr);
