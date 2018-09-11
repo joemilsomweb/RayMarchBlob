@@ -124,7 +124,7 @@ function Scene(options){
 		gl.enableVertexAttribArray(programInfo.attribLocations.uv);
 		gl.useProgram(programInfo.program);
 
-		var texture = JRM_glHelper.loadTexture(gl, "images/norm2.jpg");
+		var texture = JRM_glHelper.loadTexture(gl, "CDN_PATH/images/norm2.jpg");
 
 		var self = this;
 
